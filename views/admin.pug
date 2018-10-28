@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    h2 Users list
+    table#usersTable.table.table-bordered.table-sm.small.w-50 
+        thead
+            tr
+                td(scope='col') #
+                td(scope='col') Name
+                td(scope='col') Email
+                td(scope='col') Mac
+                td(scope='col') Remove
+        tbody
+            - let i = 1;
+            each item in users
+                tr(id= item._id)
+                    td.rowCount(scope='row')= i++
+                    td= item.short_name
+                    td= item.email
+                    td= item.mac_address 
+                    td 
+                        button.btn.btn-outline-secondary.btn-sm.small(onclick='deleteUser(this,\''+item._id+'\')') Delete                     
