@@ -1,5 +1,18 @@
 extends layout
 
-    block content
-        h1 Register
+block content
+    div(class='container')
+        p( class='text-center' ) Register user
+        div#div_success.alert.alert-success.d-none(role="alert") The user has been successfully registered.
+        form#register
+            div(class='form-group')
+                label(for='name') User name
+                input(type='text' class='form-control' id='name' name='name' placeholder='Nazwa' )
+            div(class='form-group')
+                label(for='short_name') Short name
+                input(type='text' class='form-control' id='short_name' name='short_name' placeholder='Nazwa' required)
+            div(class='form-group')
+                label(for='email') Email address
+                input(type='email' class='form-control' id='email' name='email' placeholder='Email' required)
+            button(type='submit' class='btn btn-primary') Register
         
